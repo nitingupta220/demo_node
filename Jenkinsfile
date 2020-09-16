@@ -1,19 +1,23 @@
 pipeline{
     agent any
+    tools {nodejs "node"}
     stages{
-        stage("A"){
+        stage("Git Checkout"){
             steps{
-                echo "========executing A========"
+                echo "Checking out from Github"
+                git credentialsId: '4d7078da-78cf-4cc5-9111-003196355f4d', url: 'https://github.com/nitingupta220/demo_node.git'
             }   
         }
-        stage("B"){
+        stage("Running index.js"){
             steps{
-                echo "========executing B========"
+                echo "Running index.js now"
+                sh "node index.js"
             }   
         }
-        stage("C"){
+        stage("Running next.js"){
             steps{
-                echo "========executing C========"
+                echo "Running next.js now"
+                sh "node next.js"
             }   
         }
     }
