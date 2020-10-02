@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd node-app
+cd /var/lib/jenkins/workspace/node-app
 git pull origin master
 npm install
 npm install -g nodemon pm2
