@@ -13,11 +13,11 @@ pipeline{
                 sh "npm ci"
             }
         }
-        stage("Run tests") {
-            steps{
-                sh "./script/test"
-            }
-        }
+        // stage("Run tests") {
+        //     steps{
+        //         sh "./script/test"
+        //     }
+        // }
         stage("Run Deploy") {
             steps{
                 sh "./script/deploy"
