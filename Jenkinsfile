@@ -20,6 +20,7 @@ pipeline{
         // }
         stage("Run Deploy") {
             steps{
+                sh "pwd"
                 sh "./script/deploy"
             }
         }
